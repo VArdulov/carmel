@@ -43,12 +43,13 @@ struct log_message_exception : public LogMessage
 #include "fst/connect.h"
 
 // this saves us linking to a separately built lib:
-#include "lib/util.cc"
-#include "lib/fst.cc"
-#include "lib/flags.cc"
-#include "lib/properties.cc"
-#include "lib/symbol-table.cc"
-#include "lib/compat.cc"
+// im gonna just link. linking isnt so bad... --michael
+// #include "lib/util.cc"
+// #include "lib/fst.cc"
+// #include "lib/flags.cc"
+// #include "lib/properties.cc"
+// #include "lib/symbol-table.cc"
+// #include "lib/compat.cc"
 #endif
 
 #endif

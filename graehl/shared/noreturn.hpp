@@ -34,7 +34,7 @@
 #endif
 
 #if defined(__clang__)
-#define ANALYZER_NORETURN _attribute__((analyzer_noreturn))
+#define ANALYZER_NORETURN __attribute__((analyzer_noreturn))
 #else
 #define ANALYZER_NORETURN
 #endif
