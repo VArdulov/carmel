@@ -9,23 +9,22 @@
 ## Building from source
 
 ```
-cd carmel; make -j 4 install BOOST_SUFFIX=-mt INSTALL_PREFIX=/usr/local
-# BOOST_SUFFIX= depends on how your boost libraries are installed - ls /usr/lib/libboost*.so
+mkdir build
+cd build
+cmake ..
+make
+make install
 ```
+optional cmake parameters:
+ - -DCMAKE_INSTALL_PREFIX=/custom/install/path
+ - -DBOOST_ROOT=/path/to/boost (if it is not installed in standard location)
+ - -DOPENFST_ROOT=/path/to/openfst (if desired, and it is not installed in standard location)
 
-(prerequisites: GNU Make (3.8) C++ compiler (GCC 5, clang 3.7, or
-visual studio 2015 will do) and [Boost](http://boost.org), which you
-probably already have on your linux system; for Mac, you can get them
-from [Homebrew](http://brew.sh/). For windows: MSVC2015 should work;
-you can also use cygwin or mingw.
-
-### `make` options
-
-If your system doesn't support static linking, `make NOSTATIC=1`
-
-If you're trying to modify or troubleshoot the build, take a look at
-`graehl/shared/graehl.mk` as well as `carmel/Makefile`; you shouldn't need to
-manually run `make depend`.
+prerequisites: 
+ - cmake 3.1 or higher
+ - a C++11 compiler
+ - Boost. Tested on versions between 1.53 and 1.59, but others should work, too 
+ - Optionally, openfst (http://www.openfst.org)
 
 ## Subdirectories
 
